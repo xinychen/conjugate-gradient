@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{hyperref}
+\usepackage[table]{xcolor}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz, pgfplots}
+\pgfplotsset{compat=newest}
+
+\title{Using Conjugate Gradient to Solve Matrix Equation}
+\author{Xinyu Chen}
+\date{\today}
+
+\begin{document}
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{l|c|c|c|c|c}
+\toprule
+& Feb. 22 & Feb. 23 & Feb. 24 & Feb. 25 & Feb. 26 \\
+\midrule
+\textbf{Wiki} & \cellcolor{cyan} & \cellcolor{white} & \cellcolor{white} & \cellcolor{white} & \cellcolor{white} \\
+\hline
+\hline
+\hline
+\hline
+\hline
+\textbf{xxx} & & & & \cellcolor{cyan} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\maketitle
+
+\section{System of Linear Equations}
+
+One simple example could be a system of linear equation $\boldsymbol{A}\boldsymbol{{x}}=\boldsymbol{b}$ such that
+\begin{equation}
+\boldsymbol{A}=\begin{bmatrix}
+4 & 1 \\
+1 & 3 \\
+\end{bmatrix},\quad\boldsymbol{b}=\begin{bmatrix}
+1 \\
+2 \\
+\end{bmatrix}
+\end{equation}
+This case consists of two linear equation, and it can also be written as follows,
+\begin{equation}
+\left\{
+\begin{aligned}
+4x_1+x_2=1 \\
+x_1+3x_2=2 \\
+\end{aligned}
+\right.
+\end{equation}
+where the exact solution is
+\begin{equation}
+\boldsymbol{x}=\begin{bmatrix}
+x_1 \\
+x_2 \\
+\end{bmatrix}=\begin{bmatrix}
+1/11 \\
+7/11 \\
+\end{bmatrix}\approx\begin{bmatrix}
+0.0909 \\
+0.6364 \\
+\end{bmatrix}
+\end{equation}
+
+Figure~\ref{example1} shows the system of linear equations in an $x-y$ axis.
+
+\begin{figure}[h]
+    \centering
+    \input{graphics/example1}
+    \caption{Illustration of the system of linear equations.}
+    \label{example1}
+\end{figure}
+
+% Figure~\ref{example2}
+
+\begin{figure}[h]
+    \centering
+    \input{graphics/example2}
+    \caption{Illustration of the system of linear equations.}
+    \label{example2}
+\end{figure}
+
+For the Lyapunov equation:
+\begin{equation}
+\boldsymbol{A}\boldsymbol{X}+\boldsymbol{X}\boldsymbol{A}^\top=\boldsymbol{W}
+\end{equation}
+with
+\begin{equation}
+\boldsymbol{A}=\begin{bmatrix}
+-2 & -1 \\
+-1 & 0 \\
+\end{bmatrix},\quad\boldsymbol{W}=\begin{bmatrix}
+-1 & 0 \\
+0 & -1 \\
+\end{bmatrix}
+\end{equation}
+
+
+\end{document}
