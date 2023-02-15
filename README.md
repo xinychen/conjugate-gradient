@@ -12,17 +12,17 @@ def conjugate_grad(A, b, maxiter = 5):
     n = A.shape[0]
     x = np.zeros(n)
     r = b - A @ x
-    p = r.copy()
+    q = r.copy()
     r_old = np.inner(r, r)
     for it in range(maxiter):
-        alpha = r_old / np.inner(p, A @ p)
-        x += alpha * p
-        r -= alpha * A @ p
+        alpha = r_old / np.inner(q, A @ q)
+        x += alpha * q
+        r -= alpha * A @ q
         r_new = np.inner(r, r)
         if np.sqrt(r_new) < 1e-10:
             break
         beta = r_new / r_old
-        p = r + beta * p
+        q = r + beta * q
         r_old = r_new.copy()
     return x
 ```
